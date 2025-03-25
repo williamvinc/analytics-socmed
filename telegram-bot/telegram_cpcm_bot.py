@@ -5,7 +5,8 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 from vanna.chromadb import ChromaDB_VectorStore
 from vanna.google import GoogleGeminiChat
 from dotenv import load_dotenv
-from prompts.cpcm_prompts import system_prompts
+from prompts.cpcm_prompts import system_prompts, system_prompt_instagram, system_prompt_tiktok, system_prompt_youtube
+import re
 import os
 load_dotenv()
 
@@ -23,18 +24,30 @@ config = {
 }
 
 genai.configure(api_key=GOOGLE_API_KEY)
-model = genai.GenerativeModel(GEMINI_MODEL, system_instruction=system_prompts)
+model_general = genai.GenerativeModel(GEMINI_MODEL, system_instruction=system_prompts)
+model_tiktok = genai.GenerativeModel(GEMINI_MODEL, system_instruction=system_prompt_tiktok)
+model_instagram = genai.GenerativeModel(GEMINI_MODEL, system_instruction=system_prompt_instagram)
+model_youtube = genai.GenerativeModel(GEMINI_MODEL, system_instruction=system_prompt_youtube)
 
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('Hallo! Saya adalah CPCM bot yang dibuat khusus untuk pertanyaan seputar Social Media CPCM Indonesia. Silakan bertanya kepada saya!')
+    await update.message.reply_text('Hallo! Saya adalah CPCM bot yang dibuat khusus untuk pertanyaan seputar Social Media CPCM Indonesia tetapi masih terbatas hanya di data hari ini, saya juga bisa menjawab beberapa pertanyaan seputar CPCM. Silakan bertanya kepada saya!')
     
 def handle_response(text: str):
     processed: str = text.lower()
+    if re.search(r"\big|instagram\b", processed):
+        model = model_instagram
+    elif re.search(r"\btiktok\b", processed):
+        model = model_tiktok
+    elif re.search(r"\bsubscriber|channel|youtube\b", processed):
+        model = model_youtube
+    else:
+        model = model_general
+    
     try:
         response = model.generate_content(processed)
-        return(response.text)
+        return response.text
     except Exception as e:
-        return(f"Error: {e}")
+        return f"Error: {e}"
 
 async def handle_message(update: Update, context: ContextTypes. DEFAULT_TYPE):
     message_type: str = update.message.chat.type

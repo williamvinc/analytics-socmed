@@ -10,3 +10,4 @@ langchain_text_splitters
 pypdf
 reportlab
 sentence-transformers
+pymupdf
