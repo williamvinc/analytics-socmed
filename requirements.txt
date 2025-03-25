@@ -1,0 +1,12 @@
+pandas
+requests
+mysql-connector-python
+python-telegram-bot
+google-generativeai
+pip install --upgrade apscheduler pytz tzlocal
+pip install 'vanna[chromadb,gemini,mysql]
+vertexai
+langchain_text_splitters
+pypdf
+reportlab
+sentence-transformers
