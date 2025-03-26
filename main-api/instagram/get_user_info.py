@@ -12,7 +12,7 @@ instagram_user_data_url = os.getenv("INSTAGRAM_INFO_URL")
 instagram_user_data_key = os.getenv("INSTAGRAM_INFO_KEY")
 
 if __name__ == "__main__":
-    ##API FROM https://rapidapi.com/rocketapi/api/rocketapi-for-developers
+    ##API FROM https://rapidapi.com/rocketapi/api/rocketapi-for-developers 100 req / month
 
     url = instagram_user_data_url
 

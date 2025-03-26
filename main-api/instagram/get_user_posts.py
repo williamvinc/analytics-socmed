@@ -21,7 +21,7 @@ instagram_user_url = os.getenv("INSTAGRAM_USER_URL")
 if __name__ == "__main__":
     ########################## Start Requesting Data ##########################
 
-    # API FROM https://rapidapi.com/omarmhaimdat/api/instagram230
+    # API FROM https://rapidapi.com/omarmhaimdat/api/instagram230 100 req / month
 
     url = instagram_user_url
 

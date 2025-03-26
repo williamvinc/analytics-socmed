@@ -17,7 +17,7 @@ youtube_user_url = os.getenv("YOUTUBE_URL")
 if __name__ == "__main__":
     ########################## Start Requesting Data ##########################
 
-    ## https://rapidapi.com/omarmhaimdat/api/youtube-v2
+    # https://rapidapi.com/omarmhaimdat/api/youtube-v2 200 req / month
 
     url = youtube_user_url
 

@@ -21,7 +21,7 @@ tiktok_user_url = os.getenv("TIKTOK_USER_URL")
 if __name__ == "__main__":
     ########################## Start Requesting Data ##########################
 
-    # https://rapidapi.com/scraptik-api-scraptik-api-default/api/scraptik
+    # https://rapidapi.com/scraptik-api-scraptik-api-default/api/scraptik 50 req / month
 
     url = tiktok_user_url
 
