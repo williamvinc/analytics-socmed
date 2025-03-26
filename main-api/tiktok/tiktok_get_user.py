@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     print("Saving to JSON")
 
-    json_file_path = "main-api/tiktok/dependencies/tiktok_cpcm_data.json"
+    json_file_path = "/root/socmed_api/analytics-socmed/main-api/tiktok/dependencies/tiktok_cpcm_data.json"
 
     try:
         with open(json_file_path, 'w', encoding='utf-8') as f:

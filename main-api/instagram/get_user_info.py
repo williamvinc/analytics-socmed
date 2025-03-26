@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     print("Saving to JSON")
 
-    json_file_path = "main-api/instagram/dependencies/cpcm_instagram_info.json"
+    json_file_path = "/root/socmed_api/analytics-socmed/main-api/instagram/dependencies/cpcm_instagram_info.json"
 
     try:
         with open(json_file_path, 'w', encoding='utf-8') as f:
