@@ -1,9 +1,9 @@
 import os
 import fitz
 
-DATA_PATH_TIKTOK = r"telegram-bot/data/tiktok_data.pdf"
-DATA_PATH_INSTAGRAM = r"telegram-bot/data/instagram_data.pdf"
-DATA_PATH_YOUTUBE = r"telegram-bot/data/youtube_data.pdf"
+DATA_PATH_TIKTOK = r"/root/socmed_api/analytics-socmed/telegram-bot/data/tiktok_data.pdf"
+DATA_PATH_INSTAGRAM = r"/root/socmed_api/analytics-socmed/telegram-bot/data/instagram_data.pdf"
+DATA_PATH_YOUTUBE = r"/root/socmed_api/analytics-socmed/telegram-bot/data/youtube_data.pdf"
 
 def read_pdf(file_path):
     doc = fitz.open(file_path)

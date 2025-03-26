@@ -15,7 +15,7 @@ DB_CONFIG = {
     "database": os.getenv("MYSQL_DATABASE")
 }
 
-output_folder = "telegram-bot/data"
+output_folder = "/root/socmed_api/analytics-socmed/telegram-bot/data"
 os.makedirs(output_folder, exist_ok=True)
 
 db = mysql.connector.connect(**DB_CONFIG)
